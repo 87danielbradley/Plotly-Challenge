@@ -1,5 +1,5 @@
 function buildBar(id) {
-	d3.json("../../samples.json").then((data)=> {
+	d3.json("data/samples.json").then((data)=> {
 		var filteredData = data.samples.filter(sample => sample.id === id);
 
 		var otu_ids = filteredData.map(sample =>  sample.otu_ids);
@@ -37,7 +37,7 @@ function buildBar(id) {
 }
 
 function buildBubble(id) {
-	d3.json("../../samples.json").then((data)=> {
+	d3.json("data/samples.json").then((data)=> {
 		var filteredData = data.samples.filter(sample => sample.id === id);
 		
 		var otu_ids = filteredData.map(sample =>  sample.otu_ids);
@@ -75,7 +75,7 @@ function buildBubble(id) {
 console.log("Building Demographic Next");
 function buildDemographic(id) {
 	console.log("Building Demographic")
-	d3.json("../../samples.json").then((data)=> {
+	d3.json("data/samples.json").then((data)=> {
 		var filteredData = data.metadata.filter(sample => sample.id.toString() === id)[0];
 		
 		
@@ -96,7 +96,7 @@ function buildDemographic(id) {
 d3.selectAll("#selDataset").on("change",init);
 function init() {
 	var dropdownMenu = d3.select("#selDataset");
-	d3.json("../../samples.json").then((data)=> {
+	d3.json("data/samples.json").then((data)=> {
 		data.names.forEach(function(id) {
 			dropdownMenu.append("option").text(id).property("value");
 		});
