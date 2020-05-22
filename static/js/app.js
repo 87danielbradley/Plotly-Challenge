@@ -72,18 +72,18 @@ function buildBubble(id) {
 	
 }
 
-console.log("Building Demographic Next");
+
 function buildDemographic(id) {
-	console.log("Building Demographic")
+	
 	d3.json("data/samples.json").then((data)=> {
 		var filteredData = data.metadata.filter(sample => sample.id.toString() === id)[0];
 		
 		
 		var demographicInfo = d3.select("#sample-metadata");
 		demographicInfo.html("");
-		console.log(filteredData)
+		
 		Object.entries(filteredData).forEach(([key, value]) => {
-			console.log(`Key: ${key}.toUpperCase and Value ${value}`);
+			
 			demographicInfo.append('h4').text(`${key}: ${value}`);
 
 			
@@ -101,10 +101,11 @@ function init() {
 			dropdownMenu.append("option").text(id).property("value");
 		});
 	
-	console.log(dropdownMenu.property("value"));
+	
 	buildDemographic("940");
 	buildBar("940");
 	buildBubble("940");
+	buildGauge("940");
 	
 	
 	})
@@ -112,10 +113,11 @@ function init() {
 
 
 function optionChanged(id) {
-	console.log(id);
+	
 	buildDemographic(id);
 	buildBar(id);
 	buildBubble(id);
+	buildGauge(id);
 }
 
 init()
