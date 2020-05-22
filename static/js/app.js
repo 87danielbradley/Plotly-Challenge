@@ -95,13 +95,14 @@ function buildDemographic(id) {
 	
 }
 
-d3.selectAll("#selDataset").on("change",init);
+//d3.selectAll("#selDataset").on("change",init);
 function init() {
 	var dropdownMenu = d3.select("#selDataset");
 	d3.json("data/samples.json").then((data)=> {
 		data.names.forEach(function(id) {
 			dropdownMenu.append("option").text(id).property("value");
 		});
+	
 	
 	
 	buildDemographic("940");
