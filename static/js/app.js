@@ -1,3 +1,5 @@
+init()
+
 function buildBar(id) {
 	d3.json("data/samples.json").then((data)=> {
 		var filteredData = data.samples.filter(sample => sample.id === id);
@@ -120,4 +122,4 @@ function optionChanged(id) {
 	buildGauge(id);
 }
 
-init()
+
