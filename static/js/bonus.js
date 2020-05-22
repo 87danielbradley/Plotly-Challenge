@@ -10,11 +10,11 @@ function buildGauge(id) {
 			{
 				domain: { x: [0, 1], y: [0, 1] },
 				value: wfreq,
-				title: { text: "Washing Frequency" },
+				title: { text: "Washing Frequency per Week" },
 				type: "indicator",
 				mode: "gauge+number",
 				delta: {reference: 10},
-				gauge:{ axis: {visible: true, range: [0,7]}}
+				gauge:{ axis: {visible: true, range: [0,9]}}
 			}
 		];
 

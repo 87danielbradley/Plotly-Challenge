@@ -25,9 +25,7 @@ function buildBar(id) {
 		};
 		var data = [trace1]
 		var layout = {
-			title: "temporary title",
-			xaxis: {title: "xaxis label"},
-			yaxis: {title: "yaxis label"}
+			title: "Top 10 OTUs"
 		};
 		
 		Plotly.newPlot("bar", data, layout);
@@ -65,7 +63,8 @@ function buildBubble(id) {
 		  title: 'Bubble Chart Size Scaling',
 		  showlegend: false,
 		  height: 400,
-		  width: 1000
+		  width: 1000,
+		  xaxis: {title: "OTU ID"}
 		};
 
 		Plotly.newPlot('bubble', data, layout);
